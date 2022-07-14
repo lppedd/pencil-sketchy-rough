@@ -4,8 +4,9 @@
     xmlns:p="http://www.evolus.vn/Namespace/Pencil"
     id="sketchy.rough"
     displayName="Sketchy Rough"
-    description="A sketchy collection that uses Rough.js to draw shapes"
-    author="Edoardo Luppi">
+    description="A Pencil Collection that aims to reimplement the standalone Sketchy GUI with Rough.js"
+    author="Edoardo Luppi"
+    url="https://github.com/lppedd/pencil-sketchy-rough">
   <Properties>
     <PropertyGroup name="Colors">
       <Property name="fillColor" type="Color" displayName="Background Color">#FFFFFFFF</Property>
