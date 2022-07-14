@@ -179,4 +179,65 @@
       <g id="content" />
     </p:Content>
   </Shape>
+
+  <!-- SHAPE: Scribble text -->
+  <Shape id="rough.scribbleText" displayName="Scribble text" icon="Icons/scribble-text.png">
+    <Properties>
+      <PropertyGroup>
+        <Property name="box" type="Dimension" displayName="Box">270,120</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Text">
+        <Property name="textContent" type="RichText" displayName="Content">
+          <![CDATA[
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui,
+          non pulvinar lorem felis nec erat
+          ]]>
+        </Property>
+        <Property name="textFont" type="Font" displayName="Font">
+          <E>$$textFont</E>
+        </Property>
+        <Property name="textColor" type="Color" displayName="Color">
+          <E>$$textColor</E>
+        </Property>
+      </PropertyGroup>
+    </Properties>
+
+    <Behaviors>
+      <For ref="textDiv">
+        <Attr>
+          <Arg>"style"</Arg>
+          <Arg>"display: inline-block;"</Arg>
+        </Attr>
+        <CustomStyle>
+          <Arg>"width"</Arg>
+          <Arg>$box.w + 'px'</Arg>
+        </CustomStyle>
+        <CustomStyle>
+          <Arg>"height"</Arg>
+          <Arg>$box.h + 'px'</Arg>
+        </CustomStyle>
+        <CustomStyle>
+          <Arg>"text-decoration"</Arg>
+          <Arg>$textFont.decor</Arg>
+        </CustomStyle>
+      </For>
+      <For ref="htmlObject">
+        <TextContent>
+          <Arg>$textContent</Arg>
+          <Arg>false</Arg>
+          <Arg>true</Arg>
+        </TextContent>
+        <Color>$textColor</Color>
+        <Font>$textFont</Font>
+        <Box>new Dimension($box.w, $box.h); /* depends $box */</Box>
+      </For>
+    </Behaviors>
+
+    <p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+      <foreignObject x="0" y="0" width="200" height="150" id="htmlObject">
+        <div xmlns="http://www.w3.org/1999/xhtml" id="textDiv" />
+      </foreignObject>
+    </p:Content>
+  </Shape>
 </Shapes>
