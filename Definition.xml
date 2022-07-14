@@ -108,8 +108,8 @@
     </p:Content>
   </Shape>
 
-  <!-- SHAPE: line -->
-  <Shape id="line" displayName="Line" icon="Icons/line.png">
+  <!-- SHAPE: Line -->
+  <Shape id="rough.line" displayName="Line" icon="Icons/line.png">
     <Properties>
       <PropertyGroup>
         <Property name="startLine" type="Handle" displayName="Start point" p:connectTo="*" p:lockX="$mode.value == 'vertical'" p:lockY="$mode.value == 'horizontal'">0,0</Property>
